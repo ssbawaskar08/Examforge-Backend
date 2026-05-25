@@ -31,10 +31,7 @@ app.use(
 );
 
 app.use(
-  cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
-    credentials: true,
-  })
+  cors()
 );
 
 // Rate limiter for auth routes
