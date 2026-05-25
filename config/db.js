@@ -2,6 +2,11 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
+  if (!process.env.MONGODB_URI) {
+    console.error("❌ MONGODB_URI is missing in environment variables");
+    process.exit(1);
+  }
+    console.log(process.env.MONGODB_URI || "test")
   const maxRetries = 5;
   let attempt = 0;
 
